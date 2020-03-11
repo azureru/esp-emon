@@ -11,6 +11,7 @@ unsigned long timeFinishedSetup = 0;
 WiFiClient espClient;
 PubSubClient client(espClient);
 
+// mqtt recovery
 void reconnect() {
   // Loop until we're reconnected
   while (!client.connected()) {
@@ -43,6 +44,7 @@ void setup() {
   // Connect to Wi-Fi network with SSID and password
   Serial.print("Connecting to ");
   Serial.println(ssid);
+  WiFi.mode(WIFI_STA);
   WiFi.hostname("emon");
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
