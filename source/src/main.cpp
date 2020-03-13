@@ -6,7 +6,6 @@
 
 EnergyMonitor emon1;        
 unsigned long lastMeasurement = 0;
-unsigned long timeFinishedSetup = 0;
 
 WiFiClient espClient;
 PubSubClient client(espClient);
